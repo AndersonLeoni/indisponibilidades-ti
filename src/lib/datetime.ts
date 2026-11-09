@@ -19,6 +19,11 @@ export function formatDateTime(value: string | null): string {
   return `${day}/${month}/${year} ${hour}:${minute}`
 }
 
+export function formatDate(value: string): string {
+  const [year, month, day] = value.split('-')
+  return `${day}/${month}/${year}`
+}
+
 export function diffMinutes(start: string, end: string | null): number | null {
   if (!end) return null
   const ms = new Date(`${end}Z`).getTime() - new Date(`${start}Z`).getTime()
