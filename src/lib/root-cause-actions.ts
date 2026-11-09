@@ -26,6 +26,7 @@ export async function createRootCause(formData: FormData) {
   if (error) throw new Error(error.message)
 
   revalidatePath('/causa-raiz')
+  revalidatePath('/')
   redirect('/causa-raiz')
 }
 
@@ -37,6 +38,7 @@ export async function updateRootCause(id: string, formData: FormData) {
   if (error) throw new Error(error.message)
 
   revalidatePath('/causa-raiz')
+  revalidatePath('/')
   redirect('/causa-raiz')
 }
 
@@ -45,5 +47,6 @@ export async function deleteRootCause(id: string) {
   if (error) throw new Error(error.message)
 
   revalidatePath('/causa-raiz')
+  revalidatePath('/')
   redirect('/causa-raiz')
 }

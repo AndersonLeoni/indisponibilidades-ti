@@ -19,6 +19,24 @@ export function formatDateTime(value: string | null): string {
   return `${day}/${month}/${year} ${hour}:${minute}`
 }
 
+// "Agora" no mesmo formato ingênuo (sem fuso) usado nos registros, sempre em
+// horário de Brasília, mesmo quando o servidor roda em UTC (Vercel).
+export function nowNaive(): string {
+  return new Date().toLocaleString('sv-SE', { timeZone: 'America/Sao_Paulo' }).replace(' ', 'T')
+}
+
+export function minutesBetween(start: string, end: string): number {
+  return Math.max(0, Math.round((new Date(`${end}Z`).getTime() - new Date(`${start}Z`).getTime()) / 60000))
+}
+
+export function formatMinutes(total: number): string {
+  const hours = Math.floor(total / 60)
+  const rest = total % 60
+  if (hours === 0) return `${rest}min`
+  if (hours >= 100) return `${hours}h`
+  return `${hours}h${String(rest).padStart(2, '0')}min`
+}
+
 export function formatDate(value: string): string {
   const [year, month, day] = value.split('-')
   return `${day}/${month}/${year}`

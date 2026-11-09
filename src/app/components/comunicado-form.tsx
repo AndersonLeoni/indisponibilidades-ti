@@ -36,7 +36,7 @@ export function ComunicadoForm({ templates }: { templates: Template[] }) {
   }
 
   return (
-    <div className="mt-6 space-y-4">
+    <div className="mt-6 space-y-4 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5">
       <div>
         <label className="block text-sm font-medium text-gray-700">Tipo de comunicado</label>
         <select

@@ -10,13 +10,13 @@ export default async function NovaCausaRaizPage() {
 
   return (
     <main className="mx-auto w-full max-w-2xl px-6 py-10">
-      <h1 className="text-2xl font-semibold text-gray-900">Nova causa raiz</h1>
-      <form action={createRootCause} className="mt-6 space-y-4">
+      <h1 className="text-2xl font-bold text-cvc-navy">Nova causa raiz</h1>
+      <form action={createRootCause} className="mt-6 space-y-4 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5">
         <RootCauseFormFields incidents={incidents} />
         <div className="flex gap-3">
           <button
             type="submit"
-            className="rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-700"
+            className="rounded-md bg-cvc-blue px-4 py-2 text-sm font-semibold text-white hover:bg-cvc-blue-dark"
           >
             Salvar
           </button>

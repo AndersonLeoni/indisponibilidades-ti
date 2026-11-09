@@ -1,26 +1,91 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-cvc-blue: #0b3fa8;
+  --color-cvc-blue-dark: #082f7e;
+  --color-cvc-navy: #061b4d;
+  --color-cvc-yellow: #ffd500;
+  --color-cvc-yellow-dark: #e6bf00;
+  --color-page: #f3f6fc;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  color-scheme: light;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-page);
+  color: #111827;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes grow-y {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes grow-x {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-rise {
+  animation: rise 0.5s ease-out both;
+}
+
+.animate-grow-y {
+  transform-origin: bottom;
+  animation: grow-y 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.animate-grow-x {
+  transform-origin: left;
+  animation: grow-x 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.animate-draw {
+  stroke-dasharray: 1;
+  animation: draw 1s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise,
+  .animate-grow-y,
+  .animate-grow-x,
+  .animate-draw {
+    animation: none;
+  }
 }

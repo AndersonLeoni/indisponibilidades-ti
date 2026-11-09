@@ -1,5 +1,17 @@
 export type IncidentStatus = 'investigando' | 'mitigado' | 'resolvido'
 
+export const incidentStatusLabel: Record<IncidentStatus, string> = {
+  investigando: 'Em investigação',
+  mitigado: 'Mitigado',
+  resolvido: 'Resolvido',
+}
+
+export const incidentStatusStyle: Record<IncidentStatus, string> = {
+  investigando: 'bg-amber-100 text-amber-800',
+  mitigado: 'bg-blue-100 text-blue-800',
+  resolvido: 'bg-green-100 text-green-800',
+}
+
 export type Incident = {
   id: string
   system: string

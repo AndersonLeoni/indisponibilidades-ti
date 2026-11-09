@@ -23,14 +23,14 @@ export default async function CausaRaizPage(props: PageProps<'/causa-raiz'>) {
     <main className="mx-auto w-full max-w-5xl px-6 py-10">
       <div className="flex items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-semibold text-gray-900">Causa raiz</h1>
+          <h1 className="text-2xl font-bold text-cvc-navy">Causa raiz</h1>
           <p className="mt-1 text-sm text-gray-500">
             Histórico de problemas analisados e corrigidos, para consulta em ocorrências futuras.
           </p>
         </div>
         <Link
           href="/causa-raiz/novo"
-          className="shrink-0 rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-700"
+          className="shrink-0 rounded-md bg-cvc-blue px-4 py-2 text-sm font-semibold text-white hover:bg-cvc-blue-dark"
         >
           Nova causa raiz
         </Link>
@@ -50,7 +50,7 @@ export default async function CausaRaizPage(props: PageProps<'/causa-raiz'>) {
         </button>
       </form>
 
-      <div className="mt-6 overflow-hidden rounded-lg border border-gray-200 bg-white">
+      <div className="mt-6 overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-black/5">
         <table className="w-full text-left text-sm">
           <thead className="bg-gray-50 text-gray-500">
             <tr>

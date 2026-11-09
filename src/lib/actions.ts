@@ -27,7 +27,8 @@ export async function createIncident(formData: FormData) {
   if (error) throw new Error(error.message)
 
   revalidatePath('/')
-  redirect('/')
+  revalidatePath('/incidentes')
+  redirect('/incidentes')
 }
 
 export async function updateIncident(id: string, formData: FormData) {
@@ -36,8 +37,9 @@ export async function updateIncident(id: string, formData: FormData) {
   if (error) throw new Error(error.message)
 
   revalidatePath('/')
-  revalidatePath(`/${id}`)
-  redirect(`/${id}`)
+  revalidatePath('/incidentes')
+  revalidatePath(`/incidentes/${id}`)
+  redirect(`/incidentes/${id}`)
 }
 
 export async function deleteIncident(id: string) {
@@ -45,7 +47,8 @@ export async function deleteIncident(id: string) {
   if (error) throw new Error(error.message)
 
   revalidatePath('/')
-  redirect('/')
+  revalidatePath('/incidentes')
+  redirect('/incidentes')
 }
 
 export async function sendTeamsMessage(text: string) {
